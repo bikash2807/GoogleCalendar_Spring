@@ -1,0 +1,4 @@
+#
+#Thu Aug 16 22:38:34 IST 2018
+com.api.googlecalendar.AppConfig=org.springframework.stereotype.Component
+com.googleapi.repositoryimpl.AuthorizationServiceImpl=org.springframework.stereotype.Component

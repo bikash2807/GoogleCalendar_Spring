@@ -1,7 +1,10 @@
 package com.api.googlecalendar;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 import com.googleapi.repository.AuthorizationService;
 import com.googleapi.repository.CalendarEventRepository;
@@ -13,6 +16,8 @@ import com.googleapi.repositoryimpl.CalendarListRepositoryImpl;
 import com.googleapi.repositoryimpl.DataSourceRepositoryImpl;
 
 @Configuration
+//@ComponentScan(basePackages = "com.api.googlecalendar")
+@PropertySource(value = {"classpath:application.properties"})
 public class AppConfig {
 
 	@Bean
@@ -34,4 +39,10 @@ public class AppConfig {
     public DataSourceRepository dataSourceRepository() {
         return new DataSourceRepositoryImpl();
     }
+	
+	 @Bean
+	 public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
+	        return new PropertySourcesPlaceholderConfigurer();
+	 }
+	
 }
